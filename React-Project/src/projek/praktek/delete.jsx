@@ -32,7 +32,7 @@ export default function DeleteAcc() {
 
   return (
     <motion.div
-      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-r  from-red-300 via-red-400 to-red-500 p-4" // Gradient Ungu-Merah
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -73,7 +73,7 @@ export default function DeleteAcc() {
 
           <motion.button
             type="submit"
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300"
+            className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition duration-300"
             whileHover={{ scale: 1.05 }}
             variants={formVariants}
           >

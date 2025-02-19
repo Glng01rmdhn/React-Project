@@ -52,7 +52,7 @@ export default function UpdateAcc() {
 
   return (
     <motion.div
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4"
+      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-green-200 via-green-300 to-green-400 p-4" // Gradient Hijau
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -88,7 +88,7 @@ export default function UpdateAcc() {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
             className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
-            required // Add required attribute
+            required
           />
           <input
             type="text"

@@ -37,20 +37,20 @@ export default function UserList() {
 
   return (
     <motion.div
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-4"
+      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-pink-200 via-pink-300 to-pink-400 p-4" // Gradient pink
       variants={containerVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
     >
       <motion.div
-        className="w-full flex justify-start mb-8" // Increased margin-bottom
+        className="w-full flex justify-start mb-8"
         variants={itemVariants}
       >
         <Link to="/help">
           <motion.button
-            className="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg shadow-lg hover:scale-105 transition duration-300" // Rounded-lg
-            whileHover={{ scale: 1.1 }} // Framer Motion hover effect
+            className="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg shadow-lg hover:scale-105 transition duration-300"
+            whileHover={{ scale: 1.1 }}
           >
             Kembali
           </motion.button>
@@ -58,7 +58,7 @@ export default function UserList() {
       </motion.div>
 
       <motion.h1
-        className="text-3xl font-bold text-gray-800 mb-8 animate-pulse" // Added animate-pulse
+        className="text-3xl font-bold text-gray-800 mb-8 animate-pulse"
         variants={itemVariants}
       >
         User List
@@ -76,26 +76,25 @@ export default function UserList() {
       )}
 
       <motion.div
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" // Increased gap
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         variants={itemVariants}
       >
         {users.length > 0 ? (
           users.map((user) => (
             <motion.div
               key={user.id}
-              className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition duration-300" // Added hover effect
+              className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center text-center hover:scale-105 transition duration-300"
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }} // Framer Motion hover effect
+              whileHover={{ scale: 1.05 }}
             >
               <img
                 src={user.avatar}
                 alt={user.name}
-                className="w-24 h-24 rounded-full border border-gray-300 mb-4" // Added margin-bottom
+                className="w-24 h-24 rounded-full border border-gray-300 mb-4"
               />
               <h2 className="text-xl font-bold text-gray-800 mb-2">
                 {user.name}
-              </h2>{" "}
-              {/* Darker text color */}
+              </h2>
               <p className="text-gray-600 mb-1">
                 <strong>Email:</strong> {user.email}
               </p>

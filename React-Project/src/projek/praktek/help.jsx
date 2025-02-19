@@ -60,7 +60,7 @@ const Help = () => {
 
           <Link
             to="/delete"
-            className="block w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
+            className="block w-full   bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
           >
             Delete Account
           </Link>
@@ -68,7 +68,7 @@ const Help = () => {
 
         <Link to="/">
           <motion.button
-            className="mt-8 w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
+            className="mt-8 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
             variants={itemVariants}
           >
             Back
