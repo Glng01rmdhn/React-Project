@@ -9,6 +9,7 @@ export default function AxiosStore2() {
   const [cart, setCart] = useState({});
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     axios
@@ -30,6 +31,8 @@ export default function AxiosStore2() {
       .then((response) => {
         setUsername(response.data.name);
       });
+    const adminStatus = localStorage.getItem("isAdmin") === "true";
+    setIsAdmin(adminStatus);
   }, [navigate]);
 
   const updateCart = (title, price, change) => {
@@ -63,6 +66,15 @@ export default function AxiosStore2() {
         <h1 className="text-2xl font-bold text-gray-800">React Store</h1>
         <div className="flex items-center gap-4">
           <span className="text-gray-700 font-medium">Hi, {username}</span>
+
+          {isAdmin && (
+            <Link to="/help">
+              <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 transition duration-300">
+                Admin Panel
+              </button>
+            </Link>
+          )}
+
           <button
             onClick={handleLogout}
             className="px-4 py-2 bg-red-500 text-white rounded-md shadow hover:bg-red-600 transition duration-300"
@@ -183,6 +195,9 @@ export function ProductDetail() {
       .then((response) => {
         setUsername(response.data.name);
       });
+
+    const adminStatus = localStorage.getItem("isAdmin") === "true";
+    setIsAdmin(adminStatus);
   }, [navigate]);
 
   const handleLogout = () => {
@@ -221,10 +236,20 @@ export function ProductDetail() {
       transition={{ duration: 0.8 }}
     >
       {/* Header */}
-      <header className="flex justify-between items-center mb-[200px] p-4 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-lg shadow-md">
+      return (
+      <header className="flex justify-between items-center mb-6 p-4 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-gray-800">React Store</h1>
         <div className="flex items-center gap-4">
           <span className="text-gray-700 font-medium">Hi, {username}</span>
+
+          {isAdmin && (
+            <Link to="/admin-panel">
+              <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 transition duration-300">
+                Admin Panel
+              </button>
+            </Link>
+          )}
+
           <button
             onClick={handleLogout}
             className="px-4 py-2 bg-red-500 text-white rounded-md shadow hover:bg-red-600 transition duration-300"
@@ -233,6 +258,7 @@ export function ProductDetail() {
           </button>
         </div>
       </header>
+      );
       {/* Product Detail */}
       <motion.div
         className="p-8 flex flex-col lg:flex-row items-center lg:items-start lg:gap-8 bg-gray-50 rounded-lg shadow-md max-w-5xl mx-auto"

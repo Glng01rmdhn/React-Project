@@ -66,7 +66,7 @@ const Help = () => {
           </Link>
         </motion.div>
 
-        <Link to="/">
+        <Link to="/product">
           <motion.button
             className="mt-8 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
             variants={itemVariants}

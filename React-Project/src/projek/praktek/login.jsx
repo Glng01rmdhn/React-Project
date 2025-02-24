@@ -30,6 +30,14 @@ const LoginMas = () => {
       })
       .then((response) => {
         localStorage.setItem("authToken", response.data.access_token);
+
+        // Cek apakah user adalah admin
+        if (email === "admin@mail.com" && password === "admin123") {
+          localStorage.setItem("isAdmin", JSON.stringify(true));
+        } else {
+          localStorage.removeItem("isAdmin");
+        }
+
         navigate("/product");
       })
       .catch((error) => {
@@ -108,15 +116,10 @@ const LoginMas = () => {
           <div className="text-center mt-6" variants={formVariants}>
             <p className="text-sm text-gray-600">
               Belum punya akun?{" "}
-              <Link to="/create">
-                <a className="text-indigo-500 hover:underline">Buat akun</a>{" "}
-                {/* Changed link color */}
+              <Link to="/create" className="text-indigo-500 hover:underline">
+                Buat akun
               </Link>
             </p>
-            <Link to="/help">
-              <a className="text-indigo-500 hover:underline">Admin Panel</a>{" "}
-              {/* Changed link color */}
-            </Link>
           </div>
         </form>
 
