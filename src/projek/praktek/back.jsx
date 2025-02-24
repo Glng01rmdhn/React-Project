@@ -243,7 +243,7 @@ export function ProductDetail() {
           <span className="text-gray-700 font-medium">Hi, {username}</span>
 
           {isAdmin && (
-            <Link to="/admin-panel">
+            <Link to="/help">
               <button className="px-4 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 transition duration-300">
                 Admin Panel
               </button>
