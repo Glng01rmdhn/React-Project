@@ -16,6 +16,9 @@ const Help = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   return (
     <motion.div
@@ -66,7 +69,7 @@ const Help = () => {
           </Link>
         </motion.div>
 
-        <Link to="/product">
+        <Link to="/" onClick={handleBack}>
           <motion.button
             className="mt-8 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
             variants={itemVariants}

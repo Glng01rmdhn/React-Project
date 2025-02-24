@@ -237,7 +237,7 @@ export function ProductDetail() {
       transition={{ duration: 0.8 }}
     >
       {/* Header */}
-      <header className="flex justify-between items-center mb-[150px] p-4 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-lg shadow-md">
+      <header className="flex justify-between items-center mb-[100px] p-4 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 rounded-lg shadow-md">
         <h1 className="text-2xl font-bold text-gray-800">React Store</h1>
         <div className="flex items-center gap-4">
           <span className="text-gray-700 font-medium">Hi, {username}</span>

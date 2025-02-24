@@ -47,7 +47,6 @@ export default function Create() {
       .post("https://api.escuelajs.co/api/v1/users", newUser)
       .then((response) => {
         setMessage(`✅ User created: ${response.data.name}`);
-        navigate(-1); // Go back after successful creation
       })
       .catch((error) => setMessage(`❌ Error: ${error.message}`));
 
