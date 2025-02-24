@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Help = () => {
+  const navigate = useNavigate();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,14 +71,13 @@ const Help = () => {
           </Link>
         </motion.div>
 
-        <Link to="/" onClick={handleBack}>
-          <motion.button
-            className="mt-8 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
-            variants={itemVariants}
-          >
-            Back
-          </motion.button>
-        </Link>
+        <motion.button
+          onClick={handleBack}
+          className="mt-8 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg transition duration-300 transform hover:scale-105"
+          variants={itemVariants}
+        >
+          Back
+        </motion.button>
       </motion.div>
     </motion.div>
   );
