@@ -54,15 +54,15 @@ const LoginMas = () => {
       exit="exit"
     >
       <motion.div
-        className="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-lg backdrop-blur-md bg-opacity-80" // Backdrop blur
+        className="bg-green-800 p-10 rounded-3xl shadow-2xl w-full max-w-lg backdrop-blur-md bg-opacity-80" // Backdrop blur
         variants={formVariants}
       >
-        <h1 className="text-3xl font-extrabold text-center mb-8 text-indigo-700 animate-pulse">
+        <h1 className="text-3xl font-extrabold text-center mb-8 text-white animate-pulse">
           {" "}
           {/* Added animation */}
           Welcome Back!
         </h1>
-        <p className="text-center text-gray-500 mb-6">
+        <p className="text-center text-white mb-6">
           Silakan login untuk mengakses akun Anda
         </p>
         <form
@@ -74,7 +74,7 @@ const LoginMas = () => {
           {/* Space-y-6 */}
           <div className="mb-5">
             <label
-              className="block text-sm font-semibold text-gray-600 mb-2"
+              className="block text-sm font-semibold text-white mb-2"
               htmlFor="email"
             >
               Email
@@ -91,7 +91,7 @@ const LoginMas = () => {
           </div>
           <div className="mb-6">
             <label
-              className="block text-sm font-semibold text-gray-600 mb-2"
+              className="block text-sm font-semibold text-white mb-2"
               htmlFor="password"
             >
               Password
@@ -108,15 +108,15 @@ const LoginMas = () => {
           </div>
           <motion.button
             type="submit"
-            className="w-full bg-gradient-to-r from-indigo-500 to-indigo-700 text-white py-3 px-6 rounded-full shadow-lg hover:from-indigo-600 hover:to-indigo-800 transition duration-300" // Changed button gradient
+            className="w-full bg-gradient-to-r from-orange-700 to-black text-white py-3 px-6 rounded-full shadow-lg hover:from-orange-900 hover:to-black transition duration-300" // Changed button gradient
             whileHover={{ scale: 1.05 }} // Added hover effect
           >
             Login
           </motion.button>
           <div className="text-center mt-6" variants={formVariants}>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-slate-400">
               Belum punya akun?{" "}
-              <Link to="/create" className="text-indigo-500 hover:underline">
+              <Link to="/create" className="text-blue-600 hover:underline">
                 Buat akun
               </Link>
             </p>
